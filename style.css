@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(to bottom, #ffe6f0, #e6f5ea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    z-index: 5;
+}
+
+h1 {
+    color: #2f7d5c; /* green */
+    font-size: 48px;
+}
+
+p {
+    color: #b03060; /* pink */
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+button {
+    font-size: 18px;
+    padding: 15px 35px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+}
+
+#yes {
+    background-color: #f48fb1;
+    color: white;
+	transition: all 0.3s ease;
+}
+
+#no {
+    background-color: red
+    color: #1f4f3a;
+    position: relative;
+}
+
+/* Floating hearts */
+.heart {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: pink;
+    transform: rotate(45deg);
+    animation: floatUp linear forwards;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: pink;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -9px;
+    left: 0;
+}
+
+.heart::after {
+    left: -9px;
+    top: 0;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-700px) rotate(45deg);
+        opacity: 0;
+    }
+}
+/* YES PAGE */
+.yes-page {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(to bottom, #ffd6e8, #e6f5ea);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+    z-index: 20;
+}
+
+.yes-page h1 {
+    font-size: 80px;
+    color: #b03060;
+}
+
+.yes-page p {
+    font-size: 26px;
+    color: #2f7d5c;
+    margin: 10px 0;
+}
+
+/* show page */
+.yes-page.show {
+    opacity: 1;
+    pointer-events: all;
+}
