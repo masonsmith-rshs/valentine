@@ -21,7 +21,7 @@ const noTexts = [
 
 let teleportCount = 0;
 let clickCount = 0;
-const teleportLimit = ;
+const teleportLimit = 10;
 
 // Teleport NO button first
 noBtn.addEventListener("mouseenter", () => {
@@ -62,4 +62,5 @@ yesBtn.addEventListener("click", () => {
     music.play();
     spawnHearts();
 });
+
 
